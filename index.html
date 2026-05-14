@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B-Free Run</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-bar">
+        <div>
+          <p class="eyebrow">Stage <span id="stage-number">1</span></p>
+          <h1>B-Free Run</h1>
+        </div>
+        <button id="reset-button" class="icon-button" type="button" aria-label="Reset stage">↻</button>
+      </header>
+
+      <section class="hud-grid" aria-label="Run stats">
+        <div class="hud-cell">
+          <span>Total</span>
+          <strong id="total-moves">0</strong>
+        </div>
+        <div class="hud-cell">
+          <span>Stage</span>
+          <strong id="stage-moves">0</strong>
+        </div>
+        <div class="hud-cell">
+          <span>Try</span>
+          <strong id="try-count">1</strong>
+        </div>
+      </section>
+
+      <section class="status-panel" aria-live="polite">
+        <p id="status-text">출구까지 이동하세요.</p>
+      </section>
+
+      <section class="board-wrap" aria-label="Puzzle board">
+        <canvas id="game-board" width="360" height="520"></canvas>
+      </section>
+    </main>
+
+    <div id="result-modal" class="modal" hidden>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="result-title">
+        <h2 id="result-title">잡혔다</h2>
+        <p id="result-message">경찰이 같은 노드에 도착했습니다.</p>
+        <div class="modal-actions">
+          <button id="restart-button" class="primary-button" type="button">재시작</button>
+          <button id="next-stage-button" class="primary-button" type="button">다음 스테이지</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
